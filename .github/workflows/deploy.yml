@@ -30,14 +30,27 @@ jobs:
 
       - name: Render slides
         run: |
-          cd slides/intro-to-slideai
-          quarto render
+          quarto render slides/intro-to-slideai/index.qmd
 
       - name: Create deployment directory
         run: |
           mkdir -p _site
-          cp README.md _site/index.md
-          cp -r slides/intro-to-slideai/_site _site/intro-to-slideai
+          
+          # Copy landing page
+          cp index.html _site/index.html
+          
+          # Copy rendered slides
+          if [ -f slides/intro-to-slideai/index.html ]; then
+            mkdir -p _site/intro-to-slideai
+            cp slides/intro-to-slideai/index.html _site/intro-to-slideai/
+            cp slides/intro-to-slideai/styles.css _site/intro-to-slideai/
+            if [ -d slides/intro-to-slideai/images ]; then
+              cp -r slides/intro-to-slideai/images _site/intro-to-slideai/
+            fi
+            if [ -d slides/intro-to-slideai/index_files ]; then
+              cp -r slides/intro-to-slideai/index_files _site/intro-to-slideai/
+            fi
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

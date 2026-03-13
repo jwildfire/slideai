@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideAI - CLI for Building Quarto/RevealJS Slides</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #333;
+        }
+        h1 { color: #2c3e50; margin-bottom: 0.5rem; }
+        h2 { color: #34495e; margin-top: 2rem; }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .demo-link {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .demo-link:hover { background: #2980b9; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>SlideAI</h1>
+    <p>SlideAI is a command-line tool for building Quarto/RevealJS slide decks. It handles the repetitive parts of presentation creation — scaffolding a new deck, capturing screenshots from live web pages, and rendering to HTML or PDF — so you can focus on the content.</p>
+
+    <a href="intro-to-slideai/index.html" class="demo-link">View Sample Slides →</a>
+
+    <h2>What it does</h2>
+    <p><strong>Create a new deck</strong> — Start a presentation from a template with consistent styling already wired up. Optionally pass a bulleted outline and SlideAI will generate a slide for each topic.</p>
+    
+    <p><strong>Capture screenshots as slides</strong> — Point SlideAI at one or more URLs and it will screenshot each page, save the images, and insert them into your deck as full-image slides. It auto-scrolls to the first meaningful content (charts, tables, plots) before capturing.</p>
+    
+    <p><strong>Render</strong> — Render your <code>.qmd</code> deck to HTML (RevealJS) or PDF with a single command.</p>
+    
+    <p><strong>Watch</strong> — Monitor your deck for changes and automatically re-render as you edit.</p>
+
+    <h2>Getting started</h2>
+    <pre><code>npm install
+slideai new my-presentation
+slideai html slides/my-presentation/index.qmd</code></pre>
+
+    <h2>Agentic usage</h2>
+    <p>SlideAI is built for AI-assisted workflows. Each capability maps to a command that an agent can invoke directly:</p>
+    <ul>
+        <li><code>/newslides quarterly-review</code> — Scaffold a new deck called "quarterly-review"</li>
+        <li><code>/newslides site-metrics --outline "- Traffic\n- Engagement\n- Conversions"</code> — Create a deck pre-populated from an outline</li>
+        <li><code>/slidess https://my-dashboard.example.com</code> — Screenshot a dashboard and add it as a slide</li>
+        <li><code>/slidehtml</code> — Render the current deck to HTML</li>
+        <li><code>/slidepdf</code> — Render to PDF for sharing</li>
+        <li><code>/slidewatch</code> — Watch for changes and auto-render while editing</li>
+    </ul>
+
+    <p>Every command is also available as a programmatic JavaScript function that returns structured results. See the <code>agent/</code> directory for full skill definitions with inputs, outputs, and error conditions.</p>
+
+    <p><a href="https://github.com/jwildfire/slideai">View on GitHub</a></p>
+</body>
+</html>
