@@ -1,0 +1,31 @@
+{
+  "name": "slideai",
+  "version": "1.0.0",
+  "description": "Agentic Node.js package for creating Quarto/RevealJS slide decks with AI scaffolding",
+  "main": "lib/index.js",
+  "bin": {
+    "slideai": "bin/slideai.js"
+  },
+  "scripts": {
+    "postinstall": "npx playwright install chromium",
+    "test": "vitest --run"
+  },
+  "dependencies": {
+    "playwright": "^1.52.0",
+    "chokidar": "^4.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.1",
+    "fast-check": "^4.1.1"
+  },
+  "keywords": [
+    "slides",
+    "quarto",
+    "revealjs",
+    "presentation",
+    "screenshot",
+    "ai",
+    "agent"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,16 @@
+project:
+  type: default
+
+format:
+  revealjs:
+    theme: black
+    css: styles.css
+    slide-number: true
+    hash: true
+    transition: none
+    background-transition: none
+    controls-tutorial: false
+    navigation-mode: linear
+
+execute:
+  echo: false

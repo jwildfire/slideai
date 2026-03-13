@@ -1,0 +1,37 @@
+---
+title: "Intro to SlideAI"
+format:
+  revealjs:
+    theme: black
+    slide-number: true
+    navigation-mode: linear
+    transition: none
+    css: styles.css
+---
+
+## What is SlideAI?
+
+- A CLI + library for building Quarto/RevealJS slide decks
+- Scaffolding, screenshots, rendering, and live preview
+
+## Create a Deck
+
+- Start from a template with consistent styling
+- Pass a bulleted outline to auto-generate slides
+
+## Capture Screenshots
+
+- Point at live URLs and capture them as slides
+- Auto-scrolls to charts, tables, and plots
+
+## Render and Watch
+
+- Render to HTML or PDF with one command
+- Watch mode auto-renders on every save
+
+## Agent Integration
+
+- Every command works as a CLI tool or JavaScript function
+- Structured results for agentic workflows
+- Skill files describe each capability for AI agents
+

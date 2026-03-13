@@ -1,0 +1,20 @@
+---
+title: "{{title}}"
+subtitle: "{{subtitle}}"
+date: "{{date}}"
+format:
+  revealjs:
+    theme: black
+    slide-number: true
+    navigation-mode: linear
+    transition: none
+    css: styles.css
+---
+
+## Placeholder Slide
+
+This is a placeholder content slide. Replace this with your own content.
+
+- Add your bullet points here
+- Use slide patterns from `styles.css`
+- Add images to the `images/` directory
